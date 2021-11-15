@@ -1,0 +1,14 @@
+class Solution {
+    public int solution(String s) {
+        
+		String[][] nums = { { "zero", "0" }, { "one", "1" }, { "two", "2" }, { "three", "3" }, { "four", "4" }, { "five", "5" }, { "six", "6" }, { "seven", "7" }, { "eight", "8" }, { "nine", "9" } };
+
+		for (int i = 0; i < nums.length; i++) {
+			s = s.replace(nums[i][0], nums[i][1]);
+		}
+        
+        //Integer.parseInt(str)의 경우 str이 숫자로만 이루어진 것이 아니라 "ab123a"처럼 문자가 섞일 경우 NumberFormatException 오류 발생.
+        int answer = Integer.parseInt(s);
+        return answer;
+    }
+}
