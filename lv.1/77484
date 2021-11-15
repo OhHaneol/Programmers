@@ -1,0 +1,46 @@
+import java.util.*;
+
+class Solution {
+    public int[] solution(int[] lottos, int[] win_nums) {
+        int[] answer = new int[2];
+        int countZero=0;
+        int countCorrect=0;
+        int highest, lowest;
+        
+        Arrays.sort(lottos);
+        Arrays.sort(win_nums);
+            
+        //  0 개수 세기
+        for(int i=0;i<lottos.length;i++) {
+            if(lottos[i]!=0) break;
+            countZero++;
+        }
+        // 맞은 개수 세기
+        for(int i=0;i<win_nums.length;i++) {
+            int key = win_nums[i];
+            for(int j=0;j<lottos.length;j++) {
+                if(key!=lottos[j]) continue;
+                countCorrect++;
+            }
+        }
+        
+        highest=countCorrect+countZero;
+        lowest=countCorrect;
+        
+        answer[0]=myLanking(highest);
+        answer[1]=myLanking(lowest);
+        
+        return answer;
+    }
+        //  순위 반환하는 함수
+    public static int myLanking(int correct) {
+        switch(correct) {
+            case 6: return 1;
+            case 5: return 2;
+            case 4: return 3;
+            case 3: return 4;
+            case 2: return 5;
+            default: return 6;
+            }
+        }
+}
