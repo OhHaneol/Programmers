@@ -30,7 +30,6 @@ class Solution {
 					lastL = numbers[i];
 				}
                 //  여기서!!!!!!!! 문제가 발생하는 것 같음. 거리 같은 것도 맞고 오른손잡이 조건도 걸어줬는데 안의 내용을 실행을 못해서 R을 못찍음.
-                //  이클립스에서는!!!!!!!!!! 됐는데!!!!!!!!! 니가 뭔데.....!!!!!!!!!
 				// 거리는 같은데 오른손잡이
 				else if (distL == distR && hand == "right") {
 					answer = answer.concat(right);
