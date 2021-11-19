@@ -1,0 +1,13 @@
+class Solution {
+    public long solution(int price, int money, int count) {
+        long answer = 0;
+        long fee =0;
+        
+        fee=price*(long)count*(count+1)/2;
+        
+        answer=(fee-(long)money<=0)?0:fee-money;
+        
+        return answer;
+        
+    }
+}
