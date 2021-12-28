@@ -1,0 +1,54 @@
+class Solution {
+    public String solution(int a, int b) {
+        String answer = "";
+        int[] dayCount = new int[12];   //달 일수
+        int dayOfYear=0;                //연 일수
+        int dayOfWeek=0;
+        int temp=0;
+        
+        // 1~7월 일수 입력
+        for(int i=0; i<7;i++) {
+            if(i%2==0) {
+                dayCount[i]=31;
+            } else {
+                dayCount[i]=30;
+            }
+        }
+        //8~12월 일수 입력
+        for(int i=7; i<12;i++) {
+            if(i%2==0) {
+                dayCount[i]=30;
+            } else {
+                dayCount[i]=31;
+            }
+        }
+        //2월 29일
+        dayCount[1]=29;
+        
+        for(int i=0;i<(a-1);i++) {
+            temp+=dayCount[i];
+        }
+        
+        dayOfYear = temp + b;
+        dayOfWeek = dayOfYear%7;
+        
+        switch(dayOfWeek) {
+            case 1: answer="FRI";
+                break;
+            case 2: answer="SAT";
+                break;
+            case 3: answer="SUN";
+                break;
+            case 4: answer="MON";
+                break;
+            case 5: answer="TUE";
+                break;
+            case 6: answer="WED";
+                break;
+            case 0: answer="THU";
+                break;
+        }
+        
+        return answer;
+    }
+}
