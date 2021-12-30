@@ -6,15 +6,16 @@ public class Solution {
         
         for(int i=0;i<arr.length-1;i++) {
             if(arr[i]==arr[i+1]) {
-                for(int j=i;j<arr.length;j++) {
+                for(int j=i;i<arr.length-2;j++) {
                     arr[j+1]=arr[j+2];
                 }
+                
             }
             else continue;
         }
         
         for(int i=0;i<arr.length;i++) {
-            answer[i] = arr[i];
+            answer[i]=arr[i];
         }
         
         return answer;
