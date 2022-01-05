@@ -1,0 +1,19 @@
+class Solution {
+    public int solution(int[] numbers) {
+        int answer = -1;
+        int[] nums = new int[10];
+        int sum = 0;
+        
+        for(int i=0;i<numbers.length;i++) {
+            nums[numbers[i]]=numbers[i];
+        }
+        
+        for(int i=0;i<nums.length;i++) {
+            sum+=nums[i];
+        }
+        
+        answer=45-sum;
+        
+        return answer;
+    }
+}
