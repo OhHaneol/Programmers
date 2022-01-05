@@ -88,7 +88,7 @@ class Solution {
 		default:
 			return moveL;
 		}
-	}
+	} 
 
 	// 오른손으로부터의 거리 함수
 	public static int distRight(int num, int lastR) {
