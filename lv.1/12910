@@ -1,1 +1,21 @@
-### dldl
+import java.util.*;
+
+class Solution {
+    public int[] solution(int[] arr, int divisor) {
+        //  배열 '크기 없이' 선언: ArrayList 사용
+        ArrayList<Integer> resultArr = new ArrayList<>();
+        
+        for(int i = 0; i<arr.length;i++) {
+            if(arr[i]%divisor==0) resultArr.add(arr[i]);
+        }
+        
+        if(resultArr.size() == 0) resultArr.add(-1);
+        
+        //  ArrayList 정렬
+        Collections.sort(resultArr);
+        
+        //  ArrayList to Array
+        //  stream().mapToInt
+        return resultArr.stream().mapToInt(i->i).toArray();
+    }
+}
