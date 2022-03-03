@@ -1,0 +1,15 @@
+import java.util.*;
+
+class Solution {
+    public String solution(String phone_number) {
+        String answer = "";
+        int numLength = phone_number.length();
+        
+        for(int i = 0;i<numLength-4;i++) {
+            answer += "*";
+        }
+        answer += phone_number.substring(numLength-4,numLength);
+        
+        return answer;
+    }
+}
