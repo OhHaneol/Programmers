@@ -1,0 +1,26 @@
+import java.util.*;
+
+class Solution {
+    public long solution(long n) {
+        long answer = 0;
+        long num = n;
+        int numLength = 1;
+        
+        while(num%10>0) {
+            numLength ++;
+            num /= 10;
+        }
+        long length = numLength - 1;
+        
+        long[length] nums = new long[length];
+        num = n;
+        
+        for(int i=length;i>0;i--) {
+            nums[i] = num / Math.pow(10, i);
+            num %= nums[i];
+        }
+        System.out.println(nums[i]);
+        
+        return answer;
+    }
+}
