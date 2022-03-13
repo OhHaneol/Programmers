@@ -1,0 +1,10 @@
+class Solution {
+    public long solution(long n) {
+        
+        double result = (long)Math.sqrt(n);
+        long intRes = (long)result;
+        
+        if (n - intRes == 0) return (long) Math.pow(intRes + 1, 2);
+        else return -1;
+    }
+}
