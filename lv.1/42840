@@ -1,0 +1,36 @@
+class Solution {
+    public int[] solution(int[] answers) {
+        int[] answer = {};
+        int[] giveup1 = {1, 2, 3, 4, 5};
+        int[] giveup2 = {2, 1, 2, 3, 2, 4, 2, 5};
+        int[] giveup3 = {3, 3, 1, 1, 2, 2, 4, 4, 5, 5};
+        int gu1 = 0, gu2 = 0, gu3 = 0;
+        int[] count = {gu1, gu2, gu3};
+        int[] winner = {};
+        
+        for(int i = 0; i < answer.length; i++) {
+            if(giveup1[i%5] == answer[i]) {
+                gu1++;
+            }
+            else if(giveup2[i%8] == answer[i]) {
+                gu2++;
+            }
+            else if(giveup3[i%10] == answer[i]) {
+                gu3++;
+            }
+            else continue;
+        }
+        
+        winner[0] = 1;
+        for(int i = 0; i < 2; i++) {
+            if(count[i] < count[i++]) {
+                winner[0] = i + 2;
+            }
+            else if(count[i] == count[i++]) {
+                winner[winner.length] = i + 2;
+            }
+        }
+
+        return winner;
+    }
+}
